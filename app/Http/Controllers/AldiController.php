@@ -5,75 +5,51 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
-<<<<<<< HEAD
-class Aldi extends Controller
-=======
 class AldiController extends Controller
->>>>>>> 17a565821e92e6a506567f572da0ccb70cf6ae39
 {
     public function index(): View
     {
-<<<<<<< HEAD
         $biodata = [
             'nama_lengkap' => 'I Kadek Aldi Pranata',
             'nama_panggilan' => 'Aldi',
             'handle_github' => 'aldiprnt',
-            'domisili' => 'Kota Denpasar, Bali, Indonesia',
+            'domisili' => 'Denpasar, Bali, Indonesia',
             'kampus' => 'Universitas Hindu Negeri I Gusti Bagus Sugriwa Denpasar',
             'prodi' => 'Informatika',
-            'nim' => '2413231026',
-            'ringkasan' => 'Mahasiswa Informatika yang tertarik pada pengembangan aplikasi web & mobile, pengujian perangkat lunak (QA), analisis data, serta desain grafis dan produksi acara.',
+            'nim' => '2413231015',
+            'peran_organisasi' => 'Anggota Aktif Komunitas Pengembangan Web & Teknologi Kampus — 2026',
+            'ringkasan' => 'Mahasiswa Informatika yang berfokus pada pengembangan aplikasi web backend dan frontend modern, manajemen basis data relasional, serta perancangan antarmuka web yang responsif.',
             'keahlian' => [
-                'PHP (Custom MVC, Laravel), MySQL, TypeScript, Node.js, Next.js',
-                'Dart & Flutter (sqflite), C++ (OpenMP)',
-                'Python (pandas, scikit-learn, matplotlib), Google Colab, Orange Data Mining',
-                'Docker, Kubernetes (Minikube), Git & GitHub, Jira, Katalon Studio, n8n',
-                'Canva, Figma, TikTok Studio',
+                'PHP, Framework Laravel (Blade, Routing, MVC), REST API',
+                'HTML5, CSS3, Tailwind CSS, JavaScript (ES6+)',
+                'MySQL, MariaDB, Perancangan ERD & Normalisasi Database',
+                'Git, GitHub Collaboration, Laragon, Visual Studio Code',
+                'UI Wireframing & Prototyping Dasar',
+            ],
+            'pengalaman_dan_kegiatan' => [
+                [
+                    'judul' => 'Kolaborasi Proyek UAS Pengembangan Web',
+                    'periode' => '2026',
+                    'detail' => 'Membangun aplikasi web berbasis arsitektur MVC Laravel bersama tim menggunakan alur kerja kolaborasi repository GitHub.',
+                ],
+                [
+                    'judul' => 'Pengembangan Sistem Informasi Berbasis Web',
+                    'periode' => '2025 – 2026',
+                    'detail' => 'Merancang struktur halaman dinamis, pengelolaan routing, dan integrasi komponen tampilan untuk tugas akademik.',
+                ],
+                [
+                    'judul' => 'Eksplorasi Frontend & Desain Responsif',
+                    'periode' => '2025',
+                    'detail' => 'Mengimplementasikan tata letak halaman web modern dengan komponen kartu, grid responsif, dan tipografi bersih.',
+                ],
             ],
         ];
 
-        // Contoh pemanfaatan helper/fungsi Laravel di Controller
+        // Pemanfaatan helper & fungsi bawaan Laravel
         $biodata['slug_profil'] = Str::slug($biodata['nama_lengkap']);
         $biodata['inisial'] = Str::of($biodata['nama_panggilan'])->substr(0, 1)->upper();
         $biodata['waktu_akses'] = now()->translatedFormat('d F Y, H:i') . ' WITA';
 
-        return view('biodata.index', compact('biodata'));
-=======
-        $profil = [
-            'nama' => 'Kadek Aldi Pranata',
-            'tanggal_lahir' => '3 Juni 2006',
-            'asal' => 'Bali',
-            'kampus' => 'UHN I Gusti Bagus Sugriwa Denpasar',
-            'prodi' => 'S1 Informatika',
-            'asal_sekolah' => 'SMAN 2 Bangli',
-            'peran' => 'Pengembang Web - UAS Pengembangan Web',
-            'deskripsi' => 'Mahasiswa S1 Informatika di UHN I Gusti Bagus Sugriwa Denpasar yang fokus pada pengembangan aplikasi web berbasis PHP, Laravel, serta perancangan antarmuka UI/UX.'
-        ];
-
-        $keahlian = [
-            'HTML5 & CSS3',
-            'PHP Native & Laravel',
-            'JavaScript',
-            'UI/UX Design (Figma)',
-            'Git & GitHub Collaboration'
-        ];
-
-        $proyek = [
-            [
-                'judul' => 'Sistem Peminjaman Fasilitas Kampus',
-                'keterangan' => 'Aplikasi manajemen peminjaman aula, gamelan, dan kostum tari berbasis PHP MVC.'
-            ],
-            [
-                'judul' => 'Website Reservasi Lapangan Futsal',
-                'keterangan' => 'Sistem pemesanan jadwal lapangan futsal dengan konfirmasi QR Code.'
-            ],
-            [
-                'judul' => 'Website Wisata AG Jeep Kintamani',
-                'keterangan' => 'Platform profil paket wisata dan pemesanan tur Jeep Kintamani.'
-            ]
-        ];
-
-        return view('aldi.index', compact('profil', 'keahlian', 'proyek'));
->>>>>>> 17a565821e92e6a506567f572da0ccb70cf6ae39
+        return view('aldi.index', compact('biodata'));
     }
 }
